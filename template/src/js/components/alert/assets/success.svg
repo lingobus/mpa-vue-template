@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <path id="a" d="M4.815 9.845l3.809 3.859 6.561-7.037"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <ellipse cx="10" cy="10" fill="#FFE550" rx="10" ry="10"/>
+        <use stroke="#FFF" stroke-width="2" xlink:href="#a"/>
+    </g>
+</svg>

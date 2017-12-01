@@ -1,0 +1,45 @@
+script.
+  // ls
+  ! function(w, d, ls) {
+    var k1 = 'nols',
+      k2 = 'innerHTML',
+      k3 = 'execScript',
+      lb = w.$LB = w.$LB || {};
+    lb.c = function(k, v, e) {
+      d.cookie = k + "=" + v + ';path=/;' + (e || 'expires=Tue, 14 Oct 2042 23:42:42 GMT')
+    }
+    lb.dc = function(k) {lb.c(k,'','expires=Thu, 01 Jan 1970 00:00:00 GMT')}
+    try {
+      ls[k1] = 0;
+      lb.sv = function(id) {
+        ls[id] = d.getElementById(id)[k2]
+      }
+      lb.ld = function(ids) {
+        var i;
+        for (i = 0; i < ids.length; i ++) {
+          if (!ls[ids[i][0]]) {
+            lb.c('lsv', 0);
+            location.reload();
+            return;
+          }
+        }
+        lb.dc('lsv')
+        for (i = 0; i < ids.length; i ++) {
+          var t = ls[ids[i][0]] || '', tp = ids[i][1], force = ids[i][2]
+          var s = d.createElement(tp == 'js' ? 'script' : 'style');
+          if (d[k3] && tp == 'js' && !force) {
+            d[k3](t);
+          } else {
+            if (force) {
+              s.src = '/static/' + tp + '/lib/' + id + '.min.js';
+            } else {
+              s[k2] = t;
+            }
+            d.head.appendChild(s);
+          }
+        }
+      }
+    } catch (e) {
+      lb.c(k1, 1)
+    }
+  }(this, document, localStorage)

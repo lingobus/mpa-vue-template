@@ -1,0 +1,87 @@
+//- Base template for static pages that only
+//- need vue, vue-i18n, axios
+include _global-vars
+include _global-mixins
+
+doctype html
+block vars
+  -var bodyClass=""
+  -var htmlClass=""
+
+html(class="#{htmlClass}")
+  head
+    meta(content="charset=utf-8")
+    block meta
+    block script
+    block title
+      title #{websiteTitle}
+    block libcss
+    block css
+    block headjs
+
+  body(class="#{bodyClass}")
+    block main
+    block before-libjs
+    block libjs
+
+      if useLs
+        //- remember to add externals in bin/config.js when add new lib
+        if isdev
+          if lsv == 0
+            script(id="vue.2.2.6")
+              include ../src/js/lib/vue.2.2.6.js
+            script $LB.sv('vue.2.2.6')
+            script(id="vue-i18n.6.1.1")
+              include ../src/js/lib/vue-i18n.6.1.1.js
+            script $LB.sv('vue-i18n.6.1.1')
+            script(id="axios.0.16.1")
+              include ../src/js/lib/axios.0.16.1.js
+            script $LB.sv('axios.0.16.1');
+            script(id="moment.2.18.1")
+              include ../src/js/lib/moment.2.18.1.js
+            script $LB.sv('moment.2.18.1');
+            script(id="moment-timezone-with-data.0.5.13.min")
+              include ../src/js/lib/moment-timezone-with-data.0.5.13.min.js
+            script $LB.sv('moment-timezone-with-data.0.5.13.min');$LB.dc('lsv')
+          else
+            script.
+              $LB.ld([
+                ['vue.2.2.6', 'js', #{nols}],
+                ['vue-i18n.6.1.1', 'js', #{nols}],
+                ['axios.0.16.1', 'js', #{nols}],
+                ['moment.2.18.1', 'js', #{nols}],
+                ['moment-timezone-with-data.0.5.13.min', 'js', #{nols}]
+              ]);
+        else
+          if lsv == 0
+            script(id="vue.2.2.6.min")
+              include ../src/js/lib/vue.2.2.6.min.js
+            script $LB.sv('vue.2.2.6.min', 'js')
+            script(id="vue-i18n.6.1.1.min")
+              include ../src/js/lib/vue-i18n.6.1.1.min.js
+            script $LB.sv('vue-i18n.6.1.1.min', 'js')
+            script(id="axios.0.16.1.min")
+              include ../src/js/lib/axios.0.16.1.min.js
+            script $LB.sv('axios.0.16.1.min');
+            script(id="moment.2.18.1.min")
+              include ../src/js/lib/moment.2.18.1.min.js
+            script $LB.sv('moment.2.18.1.min');
+            script(id="moment-timezone-with-data.0.5.13.min")
+              include ../src/js/lib/moment-timezone-with-data.0.5.13.min.js
+            script $LB.sv('moment-timezone-with-data.0.5.13.min');$LB.dc('lsv')
+          else
+            script $LB.ld([['vue.2.2.6.min','js',#{nols}],['vue-i18n.6.1.1.min','js',#{nols}],['axios.0.16.1.min', 'js', #{nols}],['moment.2.18.1.min','js',#{nols}], ['moment-timezone-with-data.0.5.13.min','js',#{nols}]]);
+      else
+        if isdev
+          script(src="/static/js/lib/vue.2.2.6.js")
+          script(src="/static/js/lib/vue-i18n.6.1.1.js")
+          script(src="/static/js/lib/axios.0.16.1.js")
+          script(src="/static/js/lib/moment.2.18.1.js")
+          script(src="/static/js/lib/moment-timezone-with-data.0.5.13.min.js")
+        else
+          script(src="/static/js/lib/vue.2.2.6.min.js")
+          script(src="/static/js/lib/vue-i18n.6.1.1.min.js")
+          script(src="/static/js/lib/axios.0.16.1.min.js")
+          script(src="/static/js/lib/moment.2.18.1.min.js")
+          script(src="/static/js/lib/moment-timezone-with-data.0.5.13.min.js")
+    block js

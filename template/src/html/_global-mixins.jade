@@ -1,0 +1,19 @@
+mixin locale()
+  if locale === 'zh-CN'
+    script(src="/static/js/i18n/zh-CN.js")
+  else
+    script(src="/static/js/i18n/en-US.js")
+
+mixin favicon()
+  link(rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon")
+
+mixin analytics()
+  //- add your analygics here
+  //- include ./partial/_google
+  //- include ./partial/_growingio
+  //- include ./partial/_sensorsdata
+
+
+mixin meta-seo()
+  meta(name="keyword" content="")
+  meta(name="description" content="")

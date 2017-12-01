@@ -1,0 +1,23 @@
+extends _base
+
+block meta
+  +locale()
+  +favicon()
+  +analytics()
+  +meta-seo()
+  if useLs
+    if isdev
+      include _seed
+    else
+      include _seed-min
+
+block libcss
+  link(rel="stylesheet" href="/static/css/common/common.css")
+
+block css
+  link(rel="stylesheet" href="/static/css/index.css")
+
+block main
+  #root
+block js
+    script(src="/static/js/index.js")
