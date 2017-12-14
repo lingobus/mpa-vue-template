@@ -15,5 +15,13 @@ Write Vue SPA, React SPA, traditional web page with jQuery in one project
 Install
 ====
 ```bash
+#init project
 vue init lingobus/mpa-vue-template <project-name>
+cd <project-name>
+
+#start dev server
+npm start
+
+#build for production
+npm buill release
 ```
