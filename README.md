@@ -10,3 +10,8 @@ Write Vue SPA, React SPA, traditional web page with jQuery in one project
 - Vue i18n supported
 - React supported
 - ElementUI
+
+
+Install
+====
+vue init lingobus/mpa-vue-template <project-name>
