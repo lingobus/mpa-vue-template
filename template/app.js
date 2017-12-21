@@ -38,7 +38,9 @@ app.locals.env = env
 if (env === 'dev') {
   app.use(require('./mock'))
 }
-proxy(app)
+// proxy(app)
+{{#useproxy}}
+proxy(app){{/useproxy}}
 app.use(useragent.express())
 app.use(cookieParser())
 app.use(bodyParser.json())

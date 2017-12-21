@@ -30,6 +30,10 @@
       "required": true,
       "default": 8080,
       "label": "dev server port"
+    },
+    "useproxy": {
+      "type": "confirm",
+      "label": "Do you want to enable proxy table?"
     }
   },
   "skipInterpolation": "src/js/lib/*.js",
