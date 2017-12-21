@@ -1,12 +1,12 @@
 import cookies from 'cookies-js'
 import axios from 'axios'
 import Token from '../../../common/token.js'
-const TokenPP = Token.PP
+const TOKEN_NAME = Token.PROJECT
 axios.interceptors.request.use(config => {
   if (config.headers.token) return config
-  const token = cookies.get(TokenPP) || ''
+  const token = cookies.get(TOKEN_NAME) || ''
   if (!token) return config
-  config.headers[TokenPP] = token
+  config.headers[TOKEN_NAME] = token
   return config
 })
 
