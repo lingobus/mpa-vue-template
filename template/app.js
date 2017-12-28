@@ -8,7 +8,9 @@ const useragent = require('express-useragent')
 
 const env = process.env.NODE_ENV === 'development' ? 'dev' : 'prod'
 const utils = require('./bin/utils.js')
-const proxy = require('./proxy.js')
+// const proxy = require('./proxy.js')
+{{#useproxy}}
+const proxy = require('./proxy.js'){{/useproxy}}
 const config = require('./bin/config.js')
 const PackageConfig = require('./package.json')
 const staticPath = config[env].assetsRoot

@@ -11,7 +11,7 @@ window.$LB = window.$LB || {}
 
 // sensorsdata
 // import SA from 'utils/_sa-helper.js'
-// import { PROJECT } from '../../common/token.js'
+// import { PROJECT } from '../../common/settings.js'
 // Vue.use(SA, PROJECT)
 
 // Vuex is already installed when import with script tag
