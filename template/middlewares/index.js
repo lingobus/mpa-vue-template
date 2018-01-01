@@ -10,8 +10,7 @@ module.exports = function (app) {
     } else {
       files.forEach(function (file) {
         console.log(('Loading middleware from ' + file).green.bold)
-        const fn = require(file)
-        fn(app)
+        app.use(require(file))
       })
     }
   })
