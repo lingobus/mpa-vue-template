@@ -21,6 +21,7 @@ const envconfigs = {
   },
   alias: {
     '@': path.resolve(__dirname, '../src'),
+    "pages": path.resolve(__dirname, '../src/js/pages'),
     "components": path.resolve(__dirname, '../src/js/components'),
     "api": path.resolve(__dirname, '../src/js/api'),
     "utils": path.resolve(__dirname, '../src/js/utils'),
