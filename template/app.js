@@ -52,11 +52,12 @@ app.use(bodyParser.urlencoded({
 /* server static files */
 app.use('/static', express.static(staticPath))
 
+{{#sitemap}}
 /* sitemap */
 app.get('/sitemap.xml', function (req, res) {
   res.set('Content-Type', 'application/xml')
   res.sendFile(config.paths.views + '/sitemap.xml')
-})
+}){{/sitemap}}
 
 /* middleware */
 require('./middlewares')(app)

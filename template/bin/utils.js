@@ -302,10 +302,10 @@ exports.getCopyPlugins = function (env, assetsPublicPath) {
   }, {
     from: path.join(config.paths.src, 'fonts'),
     to: path.join(config[env].assetsRoot, 'fonts')
-  }, {
+  }{{#sitemap}}, {
     from: path.join(config.paths.src, 'html/sitemap.xml'),
     to: path.join(config.paths.views, 'sitemap.xml')
-  }])
+  }{{/sitemap}}])
 }
 
 exports.safeRm = function (_path) {

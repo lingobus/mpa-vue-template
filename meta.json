@@ -34,6 +34,10 @@
     "useproxy": {
       "type": "confirm",
       "label": "Do you want to enable proxy table?"
+    },
+    "sitemap": {
+      "type": "confirm",
+      "label": "Do you want to use a sitemap?"
     }
   },
   "skipInterpolation": "src/js/lib/*.js",
