@@ -23,7 +23,7 @@ cd <project-name>
 npm start
 
 #build for production
-npm buill release
+npm run release
 ```
 
 More
