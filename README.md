@@ -29,3 +29,7 @@ npm run release
 More
 ====
 [Yeoman Generators for vue-mpa-template generated projects](https://github.com/lingobus/generator-mpa)
+
+Licence
+====
+Mozilla
